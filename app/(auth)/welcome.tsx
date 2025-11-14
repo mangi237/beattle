@@ -1,22 +1,22 @@
 import { router } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function WelcomeScreen() {
+  console.log('🎯 Welcome screen is rendering!'); // Check console for this
+     {console.log('🎯 Inside the main container of WelcomeScreen');}
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
-      
+   
       <Text style={styles.title}>BEATLLE</Text>
       <Text style={styles.slogan}>Your Stream, Their Score.</Text>
       
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
           style={styles.primaryButton}
-          onPress={() => router.push('/(auth)/signup')}
+          onPress={() => router.push('/(auth)/login')}
         >
-          <Text style={styles.primaryButtonText}>Get Started</Text>
+          <Text style={styles.primaryButtonText}>Continue Streaming</Text>
         </TouchableOpacity>
         
         <TouchableOpacity 

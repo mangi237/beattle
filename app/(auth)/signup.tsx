@@ -35,7 +35,7 @@ export default function SignupScreen() {
     setLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      router.replace('/(tabs)');
+router.replace('/(auth)/user-type');
     } catch (error: any) {
       Alert.alert('Signup Failed', error.message);
     }
