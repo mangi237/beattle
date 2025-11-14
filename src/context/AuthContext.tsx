@@ -61,7 +61,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = async (email: string, password: string): Promise<void> => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log('user logged in successfully');
+      console.log('user logged in successfully ');
     } catch (error: any) {
       throw new Error(error.message);
     }

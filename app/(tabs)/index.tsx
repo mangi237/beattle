@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  View, 
-  Text, 
-  TouchableOpacity, 
-  StyleSheet, 
-  ScrollView, 
-  FlatList,
-  RefreshControl 
-} from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { Ionicons } from '@expo/vector-icons';
-import { collection, onSnapshot, query, where, orderBy } from 'firebase/firestore';
-import { db } from '../../src/services/firebase';
+import { collection, doc, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import {
+    FlatList,
+    RefreshControl,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View
+} from 'react-native';
 import { useAuth } from '../../src/context/AuthContext';
+import { db } from '../../src/services/firebase';
 import { Battle } from '../../src/types';
+// import doc from 'firebase/firestore/doc';
 
 export default function HomeScreen() {
   const { user } = useAuth();
@@ -193,7 +194,7 @@ export default function HomeScreen() {
             style={styles.quickAction}
             onPress={() => router.push('/bot/program')}
           >
-            <Ionicons name="robot" size={24} color="#4CAF50" />
+            <Ionicons name="logo-android" size={24} color="#4CAF50" />
             <Text style={styles.quickActionText}>Earn Coins</Text>
           </TouchableOpacity>
         </View>
@@ -277,7 +278,7 @@ export default function HomeScreen() {
             onPress={() => router.push('/bot/program')}
           >
             <View style={styles.botPromoContent}>
-              <Ionicons name="robot" size={40} color="#4CAF50" />
+              <Ionicons name="logo-android" size={40} color="#4CAF50" />
               <View style={styles.botPromoText}>
                 <Text style={styles.botPromoTitle}>Earn Coins Now</Text>
                 <Text style={styles.botPromoSubtitle}>Listen to music and earn real money</Text>
